@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-clientForSocketCommunication-clientForSocketCommunicationUITests/Pods-clientForSocketCommunication-clientForSocketCommunicationUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework

@@ -1,0 +1,20 @@
+PODS:
+  - CocoaAsyncSocket (7.6.4)
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - CocoaAsyncSocket
+  - Masonry
+
+SPEC REPOS:
+  trunk:
+    - CocoaAsyncSocket
+    - Masonry
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: bcb600b75695f6adfa91eb821fda91264f24adf3
+
+COCOAPODS: 1.10.0

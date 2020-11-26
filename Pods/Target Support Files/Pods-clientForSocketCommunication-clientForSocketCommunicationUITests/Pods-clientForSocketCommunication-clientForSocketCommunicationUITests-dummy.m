@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_clientForSocketCommunication_clientForSocketCommunicationUITests : NSObject
+@end
+@implementation PodsDummy_Pods_clientForSocketCommunication_clientForSocketCommunicationUITests
+@end

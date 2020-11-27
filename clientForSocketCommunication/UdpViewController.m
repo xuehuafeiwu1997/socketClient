@@ -72,6 +72,7 @@
 - (void)startConnection {
     self.clientSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     NSError *error = nil;
+    //这里的代码其实可以不写，端口号可以随意，重要的是发送数据时的端口号一定要和服务器的那边的写法保持一致
     [self.clientSocket bindToPort:5558 error:&error];
     if (error) {
         NSLog(@"绑定端口失败，失败的原因是%@",error);

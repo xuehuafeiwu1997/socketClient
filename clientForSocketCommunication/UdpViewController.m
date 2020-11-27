@@ -72,7 +72,7 @@
 - (void)startConnection {
     self.clientSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     NSError *error = nil;
-    [self.clientSocket bindToPort:5557 error:&error];
+    [self.clientSocket bindToPort:5558 error:&error];
     if (error) {
         NSLog(@"绑定端口失败，失败的原因是%@",error);
     }

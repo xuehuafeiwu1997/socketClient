@@ -100,7 +100,7 @@
     return _sendButton;
 }
 
-#pragma mark - delegate
+#pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.textField resignFirstResponder];
     return YES;

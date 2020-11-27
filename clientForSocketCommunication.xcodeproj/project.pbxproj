@@ -10,6 +10,7 @@
 		6211DC5C940826FA40BE1A3C /* Pods_clientForSocketCommunicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C1A33CF97BE495F2B57251 /* Pods_clientForSocketCommunicationTests.framework */; };
 		9D818CEDADA9A5BCD55F926F /* Pods_clientForSocketCommunication_clientForSocketCommunicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61672F99B3A522E9D27D545 /* Pods_clientForSocketCommunication_clientForSocketCommunicationUITests.framework */; };
 		B66B397B256F8F2300B19305 /* UdpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66B397A256F8F2300B19305 /* UdpViewController.m */; };
+		B6A0BD0E2570A15900C9CE2C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A0BD0D2570A15900C9CE2C /* MainViewController.m */; };
 		B6E7AD5D256E6CDD00667BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E7AD5C256E6CDD00667BFE /* AppDelegate.m */; };
 		B6E7AD63256E6CDD00667BFE /* TcpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E7AD62256E6CDD00667BFE /* TcpViewController.m */; };
 		B6E7AD68256E6CE000667BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E7AD67256E6CE000667BFE /* Assets.xcassets */; };
@@ -46,6 +47,8 @@
 		B1EA4C51AC15D4295C2F5083 /* Pods-clientForSocketCommunicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clientForSocketCommunicationTests.release.xcconfig"; path = "Target Support Files/Pods-clientForSocketCommunicationTests/Pods-clientForSocketCommunicationTests.release.xcconfig"; sourceTree = "<group>"; };
 		B66B3979256F8F2300B19305 /* UdpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UdpViewController.h; sourceTree = "<group>"; };
 		B66B397A256F8F2300B19305 /* UdpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UdpViewController.m; sourceTree = "<group>"; };
+		B6A0BD0C2570A15900C9CE2C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B6A0BD0D2570A15900C9CE2C /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		B6E7AD58256E6CDD00667BFE /* clientForSocketCommunication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clientForSocketCommunication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E7AD5B256E6CDD00667BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6E7AD5C256E6CDD00667BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				B6E7AD5B256E6CDD00667BFE /* AppDelegate.h */,
 				B6E7AD5C256E6CDD00667BFE /* AppDelegate.m */,
+				B6A0BD0C2570A15900C9CE2C /* MainViewController.h */,
+				B6A0BD0D2570A15900C9CE2C /* MainViewController.m */,
 				B6E7AD61256E6CDD00667BFE /* TcpViewController.h */,
 				B6E7AD62256E6CDD00667BFE /* TcpViewController.m */,
 				B66B3979256F8F2300B19305 /* UdpViewController.h */,
@@ -411,6 +416,7 @@
 				B6E7AD63256E6CDD00667BFE /* TcpViewController.m in Sources */,
 				B6E7AD5D256E6CDD00667BFE /* AppDelegate.m in Sources */,
 				B6E7AD6E256E6CE000667BFE /* main.m in Sources */,
+				B6A0BD0E2570A15900C9CE2C /* MainViewController.m in Sources */,
 				B66B397B256F8F2300B19305 /* UdpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

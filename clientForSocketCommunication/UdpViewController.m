@@ -111,4 +111,17 @@
     NSLog(@"这是发出的第%ld个请求",tag);
 }
 
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didNotSendDataWithTag:(long)tag dueToError:(NSError *)error {
+    NSLog(@"tag为%ld的数据发送错误",tag);
+    NSLog(@"错误的原因为%@",error);
+}
+
+- (void)udpSocketDidClose:(GCDAsyncUdpSocket *)sock withError:(NSError  * _Nullable)error {
+    NSLog(@"socket被关闭");
+}
+
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didNotConnect:(NSError * _Nullable)error {
+    NSLog(@"并没有连接，连接失败");
+}
+
 @end

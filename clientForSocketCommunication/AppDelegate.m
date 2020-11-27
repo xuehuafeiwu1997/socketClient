@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import "TcpViewController.h"
 #import "UdpViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,7 @@
     [self.window makeKeyAndVisible];
 //    TcpViewController *vc = [[TcpViewController alloc] init];
     UdpViewController *vc = [[UdpViewController alloc] init];
+//    MainViewController *vc = [[MainViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     return YES;

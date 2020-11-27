@@ -83,6 +83,7 @@
         return;
     }
     NSLog(@"开始发送数据");
+    [self.textArr addObject:self.textField.text];
     NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
     [self.clientSocket sendData:data toHost:@"192.168.31.61" port:5557 withTimeout:-1 tag:self.textArr.count];
 }
@@ -101,10 +102,6 @@
 #pragma mark - delegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.textField resignFirstResponder];
-    if (!textField.text || [textField.text length] == 0) {
-        return YES;
-    }
-    [self.textArr addObject:self.textField.text];
     return YES;
 }
 

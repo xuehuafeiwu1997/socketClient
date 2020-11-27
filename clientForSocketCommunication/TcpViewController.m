@@ -84,6 +84,7 @@
         NSLog(@"发送的信息不能为空");
         return;
     }
+    [self.textArr addObject:self.textField.text];
     NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
     [self.clientSocket writeData:data withTimeout:-1 tag:self.textArr.count];
 }
@@ -102,10 +103,6 @@
 #pragma mark - delegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.textField resignFirstResponder];
-    if (!textField.text || [textField.text length] == 0) {
-        return YES;
-    }
-    [self.textArr addObject:self.textField.text];
     return YES;
 }
 

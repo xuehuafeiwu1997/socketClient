@@ -42,6 +42,8 @@
         make.width.greaterThanOrEqualTo(@0);
         make.height.greaterThanOrEqualTo(@0);
     }];
+    
+    [self startConnection];
 }
 
 - (UITextField *)textField {
@@ -67,21 +69,22 @@
     NSLog(@"当前的文本为:%@",self.textField.text);
 }
 
-- (void)sendMessage {
-    if (!self.textField.text || [self.textField.text length] == 0) {
-        return;
-    }
+- (void)startConnection {
     self.clientSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     NSError *error = nil;
     [self.clientSocket bindToPort:5557 error:&error];
     if (error) {
         NSLog(@"绑定端口失败，失败的原因是%@",error);
-    } else {
-        NSLog(@"绑定端口成功，开始发送数据");
-        NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
-//        [self.clientSocket sendData:data withTimeout:-1 tag:self.textArr.count];
-        [self.clientSocket sendData:data toHost:@"192.168.31.61" port:5557 withTimeout:-1 tag:self.textArr.count];
     }
+}
+
+- (void)sendMessage {
+    if (!self.textField.text || [self.textField.text length] == 0) {
+        return;
+    }
+    NSLog(@"开始发送数据");
+    NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
+    [self.clientSocket sendData:data toHost:@"192.168.31.61" port:5557 withTimeout:-1 tag:self.textArr.count];
 }
 
 - (UIButton *)sendButton {

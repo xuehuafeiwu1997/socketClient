@@ -42,6 +42,8 @@
         make.width.greaterThanOrEqualTo(@0);
         make.height.greaterThanOrEqualTo(@0);
     }];
+    
+    [self startConnection];
 }
 
 - (UITextField *)textField {
@@ -67,21 +69,23 @@
     NSLog(@"当前的文本为:%@",self.textField.text);
 }
 
+- (void)startConnection {
+    self.clientSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    NSError *error = nil;
+    //电脑上的网络名称和手机上的网络ip地址必须一致才行，不然的话协议方法一直无法执行
+    if (![self.clientSocket connectToHost:@"192.168.31.61" onPort:5556 error:&error]) {
+        NSLog(@"连接失败，失败的原因是%@",error);
+    }
+}
+
 - (void)sendMessage {
     NSLog(@"点击了该方法");
     if (!self.textField.text || [self.textField.text length] == 0) {
         NSLog(@"发送的信息不能为空");
         return;
     }
-    self.clientSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    NSError *error = nil;
-    //电脑上的网络名称和手机上的网络ip地址必须一致才行，不然的话协议方法一直无法执行
-    if (![self.clientSocket connectToHost:@"192.168.31.61" onPort:5556 error:&error]) {
-        NSLog(@"连接失败，失败的原因是%@",error);
-        return;
-    }
-//    NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
-//    [self.clientSocket writeData:data withTimeout:-1 tag:1111];
+    NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
+    [self.clientSocket writeData:data withTimeout:-1 tag:self.textArr.count];
 }
 
 - (UIButton *)sendButton {
@@ -108,8 +112,8 @@
 #pragma mark - GCDAsyncSocketDelegate
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
     NSLog(@"连接成功，连接的ip地址为%@",host);
-    NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
-    [sock writeData:data withTimeout:-1 tag:self.textArr.count];
+//    NSData *data = [self.textField.text dataUsingEncoding:NSUTF8StringEncoding];
+//    [sock writeData:data withTimeout:-1 tag:self.textArr.count];
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
